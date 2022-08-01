@@ -10,6 +10,7 @@ export interface IPost {
     image: string;
   };
   description: string;
+  excerpt: string;
   mainImage: {
     asset: {
       url: string;

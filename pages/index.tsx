@@ -48,6 +48,7 @@ export const getServerSideProps = async () => {
     image,
   },
   description,
+  excerpt,
   mainImage,
   slug,
 }`;

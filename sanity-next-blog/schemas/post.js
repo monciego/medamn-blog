@@ -15,6 +15,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'excerpt',
+      title: 'Excerpt',
+      description: 'Make this short also, a one sentence is enough. Thank you!',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

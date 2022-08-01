@@ -49,10 +49,9 @@ export const Post: React.FunctionComponent<IPostProps> = ({ post, aspect }) => {
           </Link>
         </h2>
 
-        {/* add an excerpt */}
-        {post.description && (
+        {post.excerpt && (
           <p className='mt-2 text-sm text-gray-700 '>
-            <Link href={`/post/${post.slug.current}`}>{post.description}</Link>
+            <Link href={`/post/${post.slug.current}`}>{post.excerpt}</Link>
           </p>
         )}
 
