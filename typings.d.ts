@@ -4,6 +4,7 @@
 export interface IPost {
   _id: string;
   _createdAt: string;
+  _updatedAt: string;
   title: string;
   author: {
     name: string;

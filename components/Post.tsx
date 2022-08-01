@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { cx } from '../utils/all';
 import { urlFor } from '../sanity';
+import { parseISO, format } from 'date-fns';
 import { IPost } from '../typings';
 import Image from 'next/image';
 
@@ -72,11 +73,14 @@ export const Post: React.FunctionComponent<IPostProps> = ({ post, aspect }) => {
             <span className='text-sm'>{post.author.name}</span>
           </div>
           <span className='text-xs text-gray-600'>&bull;</span>
-          {/* install date-fns and add the updated at */}
-          <time className='text-sm' dateTime={post._createdAt}>
-            {/* fixed this undefined createdAt */}
-            {/* {post._createdAt} */}
-            August 01, 2022
+          <time
+            className='text-sm'
+            dateTime={post._updatedAt || post._createdAt}
+          >
+            {format(
+              parseISO(post?._updatedAt || post._createdAt),
+              'MMMM dd, yyyy'
+            )}
           </time>
         </div>
       </div>
