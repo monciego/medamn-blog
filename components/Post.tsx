@@ -22,16 +22,15 @@ export const Post: React.FunctionComponent<IPostProps> = ({ post, aspect }) => {
           )}
         >
           <Link href={`/post/${post.slug.current}`}>
-            <a>
-              {post.mainImage && (
-                <Image
-                  src={urlFor(post.mainImage).url()}
-                  sizes='80vw'
-                  layout='fill'
-                  objectFit='cover'
-                />
-              )}
-            </a>
+            {post.mainImage && (
+              <Image
+                src={urlFor(post.mainImage).url()}
+                sizes='80vw'
+                layout='fill'
+                objectFit='cover'
+                priority
+              />
+            )}
           </Link>
         </div>
         <h2 className='mt-2 text-lg font-semibold tracking-normal text-brand-primary '>
